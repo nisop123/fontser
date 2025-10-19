@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>Fontser - Choose Your Best Font | Interactive Font Picker</title>
+    <meta name="description" content="Discover your perfect font with Fontser! Swipe through Google Fonts like Tinder. Choose fonts for your website with interactive modes: Swipe, Tournament, and Combo matcher.">
+    <meta name="keywords" content="font picker, google fonts, font finder, typography tool, font selector, web fonts, font matcher, choose font, font comparison">
+    <meta name="author" content="Fontser">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fontser.com/">
+    <meta property="og:title" content="Fontser - Choose Your Best Font">
+    <meta property="og:description" content="Swipe through Google Fonts and find your perfect typography match! Interactive font picker with Swipe, Tournament, and Combo modes.">
+    <meta property="og:image" content="https://fontser.com/logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fontser.com/">
+    <meta property="twitter:title" content="Fontser - Choose Your Best Font">
+    <meta property="twitter:description" content="Swipe through Google Fonts and find your perfect typography match!">
+    <meta property="twitter:image" content="https://fontser.com/logo.png">
+    
+    <!-- Theme & App -->
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Fontser">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fontser.com/">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="shortcut icon" href="favicon.png">
+    
+    <!-- Clarity Analytics -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","tnoppak3m3");
+    </script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Setup Screen -->
+        <div id="setup-screen" class="setup-screen">
+            <div class="logo">
+                <img src="logo.png" alt="Fontser Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span class="logo-text" style="display:none;">F</span>
+            </div>
+            <h1>Fontser</h1>
+            <p class="subtitle">Choose your best font</p>
+            
+            <!-- Mode Selection -->
+            <div class="setup-section">
+                <h3><span class="section-number">1</span> Choose Mode</h3>
+                <div class="option-grid">
+                    <div class="option-card" onclick="selectMode('swipe')">
+                        <span class="option-icon">💘</span>
+                        <div class="option-label">Swipe<br><small>Like/Dislike</small></div>
+                    </div>
+                    <div class="option-card" onclick="selectMode('tournament')">
+                        <span class="option-icon">🏆</span>
+                        <div class="option-label">Tournament<br><small>1 vs 1</small></div>
+                    </div>
+                    <div class="option-card" onclick="selectMode('combo')">
+                        <span class="option-icon">🎯</span>
+                        <div class="option-label">Combo<br><small>H1+H2+H3</small></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Language Selection -->
+            <div class="setup-section">
+                <h3><span class="section-number">2</span> Language Support</h3>
+                <div class="checkbox-group">
+                    <div class="checkbox-option selected" onclick="toggleLang('latin')">
+                        <input type="checkbox" checked id="latin"><label>Latin</label>
+                    </div>
+                    <div class="checkbox-option selected" onclick="toggleLang('cyrillic')">
+                        <input type="checkbox" checked id="cyrillic"><label>Cyrillic</label>
+                    </div>
+                    <div class="checkbox-option" onclick="toggleLang('both')">
+                        <input type="checkbox" id="both"><label>✨ Both languages</label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category Selection -->
+            <div class="setup-section">
+                <h3><span class="section-number">3</span> Font Categories</h3>
+                <div class="checkbox-group">
+                    <div class="checkbox-option selected" onclick="toggleCategory('serif')">
+                        <input type="checkbox" checked id="serif"><label>Serif</label>
+                    </div>
+                    <div class="checkbox-option selected" onclick="toggleCategory('sans-serif')">
+                        <input type="checkbox" checked id="sans-serif"><label>Sans Serif</label>
+                    </div>
+                    <div class="checkbox-option selected" onclick="toggleCategory('display')">
+                        <input type="checkbox" checked id="display"><label>Display</label>
+                    </div>
+                    <div class="checkbox-option selected" onclick="toggleCategory('handwriting')">
+                        <input type="checkbox" checked id="handwriting"><label>Handwriting</label>
+                    </div>
+                    <div class="checkbox-option selected" onclick="toggleCategory('monospace')">
+                        <input type="checkbox" checked id="monospace"><label>Monospace</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn-start" id="btnStart" onclick="startGame()">Start →</button>
+            <button class="btn-start" id="btnClearSession" onclick="clearSessionAndReload()" style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%); margin-top: 12px; font-size: 0.9em; padding: 12px 36px; display: none;">Clear Session</button>
+        </div>
+        
+        <!-- Game Screen -->
+        <div id="game-screen" class="game-screen">
+            <div class="game-header">
+                <div class="game-title" id="gameTitle"><span>💘</span><span>Swipe Mode</span></div>
+                <button class="btn-back" onclick="backToSetup()">← Back</button>
+                <div class="progress-bar" id="progressBar" style="width:0%"></div>
+            </div>
+            <div id="gameContent"></div>
+            <div class="favorites">
+                <h2 id="favoritesTitle">❤️ Favorites</h2>
+                <div class="favorites-grid" id="favoritesList">
+                    <div class="empty-state">No favorites yet. Start choosing fonts!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="app-part1.js"></script>
+    <script src="app-part2.js"></script>
+
+<script type="text/javascript" src="/unprotected/back_to_spaceship.js?hash=4975d460e508829e8fb64d3962bc44ad35f3a95a"></script>
+
+</body>
+</html>

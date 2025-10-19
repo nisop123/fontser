@@ -1,0 +1,335 @@
+/* ========================================
+   COMBO MODE - ОТДЕЛЬНЫЕ СТИЛИ
+   ======================================== */
+
+/* Выбранные шрифты - компактные блоки */
+.selected-font-compact {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4ff 100%);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-md);
+    padding: 14px 18px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.selected-label {
+    font-size: 0.75em;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.selected-name {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.selected-counter {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 2px;
+}
+
+.selected-fonts-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.selected-font-compact.with-arrows {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+}
+
+.selected-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+}
+
+.arrow-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.arrow-btn:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: scale(1.15);
+}
+
+.arrow-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Live Preview - маленький, сверху */
+.combo-live-preview {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e8e8e8;
+}
+
+.preview-label {
+    font-size: 0.7em;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.preview-content h1 {
+    font-size: 1.4em;
+    margin-bottom: 6px;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.preview-content h2 {
+    font-size: 1em;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.preview-content p {
+    font-size: 0.8em;
+    line-height: 1.4;
+    color: #666;
+}
+
+/* Счетчик */
+.combo-counter {
+    text-align: center;
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 0.95em;
+    margin-bottom: 16px;
+    padding: 6px 14px;
+    background: rgba(118, 75, 162, 0.1);
+    border-radius: 20px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Кликабельные шрифты в результатах */
+.clickable-font {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.clickable-font:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.clickable-font:hover strong::after {
+    content: ' 👆';
+}
+
+.clickable-font strong {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Результаты - карточки */
+.results-grid-rich {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 24px;
+}
+
+.result-card-rich {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease both;
+    border: 1px solid #e0e0e0;
+}
+
+.result-card-rich:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.result-number {
+    background: var(--bg-gradient);
+    color: white;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 0.9em;
+    letter-spacing: 0.5px;
+}
+
+.result-article {
+    padding: 32px;
+}
+
+.result-article h1 {
+    font-size: 2.2em;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    color: #1a1a1a;
+}
+
+.result-article h2 {
+    font-size: 1.4em;
+    margin-bottom: 16px;
+    color: #555;
+}
+
+.result-article p {
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+.result-article blockquote {
+    font-style: italic;
+    border-left: 4px solid var(--primary);
+    padding-left: 18px;
+    margin: 20px 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.result-meta-rich {
+    background: #f8f9fa;
+    padding: 18px 32px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.meta-item span {
+    font-size: 0.7em;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.meta-item strong {
+    font-size: 0.95em;
+    color: #1a1a1a;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .selected-fonts-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .combo-live-preview {
+        padding: 14px 16px;
+    }
+    
+    .preview-content h1 {
+        font-size: 1.2em;
+    }
+    
+    .preview-content h2 {
+        font-size: 0.95em;
+    }
+    
+    .result-meta-rich {
+        grid-template-columns: 1fr;
+        padding: 14px 20px;
+        gap: 10px;
+    }
+    
+    .result-article {
+        padding: 24px 18px;
+    }
+    
+    .result-article h1 {
+        font-size: 1.7em;
+    }
+    
+    .result-article h2 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .selected-font-compact.with-arrows {
+        padding: 8px 10px;
+    }
+    
+    .arrow-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9em;
+    }
+    
+    .combo-live-preview {
+        padding: 12px;
+    }
+    
+    .preview-content h1 {
+        font-size: 1.1em;
+    }
+    
+    .preview-content h2 {
+        font-size: 0.85em;
+    }
+    
+    .preview-content p {
+        font-size: 0.75em;
+    }
+    
+    .result-article h1 {
+        font-size: 1.4em;
+    }
+    
+    .result-article h2 {
+        font-size: 1em;
+    }
+    
+    .result-article {
+        padding: 18px 14px;
+    }
+    
+    .result-number {
+        padding: 8px 14px;
+        font-size: 0.85em;
+    }
+}
